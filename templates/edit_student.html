@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card card-form p-3">
+  <h4 class="mb-3">Edit Student</h4>
+  <form method="post" novalidate>
+    <div class="row g-3">
+      <div class="col-md-6">
+        <label class="form-label">First name</label>
+        <input name="first_name" class="form-control" value="{{ student.first_name }}" required>
+      </div>
+      <div class="col-md-6">
+        <label class="form-label">Last name</label>
+        <input name="last_name" class="form-control" value="{{ student.last_name }}" required>
+      </div>
+
+      <div class="col-md-6">
+        <label class="form-label">Email</label>
+        <input name="email" type="email" class="form-control" value="{{ student.email }}" required>
+      </div>
+      <div class="col-md-6">
+        <label class="form-label">Mobile</label>
+        <input name="mobile_number" class="form-control" value="{{ student.mobile_number }}" required>
+      </div>
+
+      <div class="col-md-6">
+        <label class="form-label">Course</label>
+        <input name="current_course" class="form-control" value="{{ student.current_course }}" required>
+      </div>
+      <div class="col-md-3">
+        <label class="form-label">Year</label>
+        <input name="current_year" type="number" class="form-control" value="{{ student.current_year }}">
+      </div>
+      <div class="col-md-3">
+        <label class="form-label">Roll number</label>
+        <input name="roll_number" class="form-control" value="{{ student.roll_number }}">
+      </div>
+
+      <div class="col-md-4">
+        <label class="form-label">Admission year</label>
+        <input name="admission_year" type="number" class="form-control" value="{{ student.admission_year }}">
+      </div>
+      <div class="col-md-8">
+        <label class="form-label">Previous qualification</label>
+        <input name="previous_qualification" class="form-control" value="{{ student.previous_qualification }}">
+      </div>
+
+      <div class="col-md-6">
+        <label class="form-label">Guardian name</label>
+        <input name="guardian_name" class="form-control" value="{{ student.guardian_name }}">
+      </div>
+      <div class="col-md-6">
+        <label class="form-label">Guardian contact</label>
+        <input name="guardian_contact" class="form-control" value="{{ student.guardian_contact }}">
+      </div>
+
+      <div class="col-md-4">
+        <label class="form-label">Date of Birth</label>
+        <input name="date_of_birth" type="date" class="form-control" value="{{ student.date_of_birth }}">
+      </div>
+      <div class="col-md-4">
+        <label class="form-label">Blood group</label>
+        <input name="blood_group" class="form-control" value="{{ student.blood_group }}">
+      </div>
+      <div class="col-md-4">
+        <label class="form-label">Address</label>
+        <input name="address" class="form-control" value="{{ student.address }}">
+      </div>
+
+      <div class="col-12 text-end">
+        <a class="btn btn-secondary" href="{{ url_for('index') }}">Cancel</a>
+        <button class="btn btn-primary ms-2" type="submit">Save</button>
+      </div>
+    </div>
+  </form>
+</div>
+{% endblock %}
