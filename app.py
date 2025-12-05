@@ -9,7 +9,7 @@ DB_PATH = os.path.join(BASE_DIR, "students.db")
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = f"sqlite:///{DB_PATH}"
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-app.secret_key = "dev-secret"  # development only
+app.secret_key = "dev-secret"  
 
 db.init_app(app)
 
@@ -101,7 +101,7 @@ def delete_student(student_id):
         flash("Error deleting: " + str(e))
     return redirect(url_for('index'))
 
-# optional simple JSON API
+
 @app.route('/api/students', methods=['GET'])
 def api_list():
     return jsonify([s.to_dict() for s in Student.query.all()])
